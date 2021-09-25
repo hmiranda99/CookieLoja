@@ -1,0 +1,26 @@
+.animate{
+    animation: fadeInUp 2s;
+}
+
+.animate_card{
+    animation: pulse 2s 1s;
+}
+
+@keyframes rool {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+
+@keyframes rool2 {
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-200%);
+    }
+}
