@@ -276,6 +276,126 @@
                             </div>    
                         ');
                 }
+            } else{
+                echo ('
+                <label>Sapatos</label>
+                <div class="align">
+                    <div class="card animate_card">
+                        <img src="./images/t1.jpg" alt="Tênis preto adidas">
+                        <div class="center font">TÊNIS ZX 2K BOOST</div>
+                        <div class="align font margin">
+                            <span class="material-icons">
+                                favorite_border
+                            </span>
+                            <p>R$649,99</p>
+                            <span class="material-icons">
+                                local_grocery_store
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="card animate_card">
+                        <img src="./images/t2.jpg" alt="Tênis preto adidas">
+                        <div class="center font">TÊNIS D.O.N. ISSUE #3</div>
+                        <div class="align font margin">
+                            <span class="material-icons">
+                                favorite_border
+                            </span>
+                            <p>R$799,99</p>
+                            <span class="material-icons">
+                                local_grocery_store
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="card animate_card">
+                        <img src="./images/t3.jpg" alt="Tênis preto adidas">
+                        <div class="center font">TÊNIS CHOIGO</div>
+                        <div class="align font margin">
+                            <span class="material-icons">
+                                favorite_border
+                            </span>
+                            <p>R$599,99</p>
+                            <span class="material-icons">
+                                local_grocery_store
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="card animate_card">
+                        <img src="./images/t4.jpg" alt="Tênis preto adidas">
+                        <div class="center font">Y-3 RUNNER 4D IO</div>
+                        <div class="align font margin">
+                            <span class="material-icons">
+                                favorite_border
+                            </span>
+                            <p>R$2.699,99</p>
+                            <span class="material-icons">
+                                local_grocery_store
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <label>Acessórios</label>
+                <div class="align">
+                    <div class="card animate_card">
+                        <img src="./images/a1.jpg" alt="Tênis preto adidas">
+                        <div class="center font">MOCHILA STAN</div>
+                        <div class="align font margin">
+                            <span class="material-icons">
+                                favorite_border
+                            </span>
+                            <p>R$499,99</p>
+                            <span class="material-icons">
+                                local_grocery_store
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="card animate_card">
+                        <img src="./images/a2.jpg" alt="Tênis preto adidas">
+                        <div class="center font">Y-3 CH1 REF BP</div>
+                        <div class="align font margin">
+                            <span class="material-icons">
+                                favorite_border
+                            </span>
+                            <p>R$2.199,99</p>
+                            <span class="material-icons">
+                                local_grocery_store
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="card animate_card">
+                        <img src="./images/a3.jpg" alt="Tênis preto adidas">
+                        <div class="center font">MALA TROLLEY PEQUENA</div>
+                        <div class="align font margin">
+                            <span class="material-icons">
+                                favorite_border
+                            </span>
+                            <p>R$999,99</p>
+                            <span class="material-icons">
+                                local_grocery_store
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="card animate_card">
+                        <img src="./images/a4.jpg" alt="Tênis preto adidas">
+                        <div class="center font">MALA DUFFEL 4ATHLTS PEQUENA</div>
+                        <div class="align font margin">
+                            <span class="material-icons">
+                                favorite_border
+                            </span>
+                            <p>R$279,99</p>
+                            <span class="material-icons">
+                                local_grocery_store
+                            </span>
+                        </div>
+                    </div>
+                </div>    
+            ');
             }
             ?>
         </section>
