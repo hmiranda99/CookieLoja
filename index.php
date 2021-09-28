@@ -430,7 +430,7 @@
                 }
                 echo ("</div>"); 
 
-                echo ("<div class=align width>");
+                echo ("<div class=align>");
                 foreach ($produtos1 as $produtos_indice => $value) {
                     echo ("   
                     <div class='card animate_card'>
