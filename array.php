@@ -16,13 +16,13 @@
     $casacos = array(
         0 => array('./images/j1.jpg', 'JAQUETA ADICOLOR CLASSICS', 'R$399,99'),
         1 => array('./images/j2.jpg', 'MOLETOM FLEECE ADICOLOR', 'R$279,99'),
-        2 => array('./images/j3.jpg', 'MOLETOM CAPUZ MARIMEKKO', 'R$499,99'),
-        3 => array('./images/j4.jpg', 'JAQUETA VELUDO MONOGRAMA ALTO-RELEVO', 'R$499,99')
+        2 => array('./images/j3.jpg', 'MOLETOM MARIMEKKO', 'R$499,99'),
+        3 => array('./images/j4.jpg', 'JAQUETA VELUDO MONOGRAMA', 'R$499,99')
     );
 
     $chuteiras = array(
         0 => array('./images/c1.jpg', 'CHUTEIRA GAMEMODE KNIT FUTSAL', 'R$599,99'),
-        1 => array('./images/c2.jpg', 'CHUTEIRA X GHOSTED+ CAMPO', 'R$999,99'),
+        1 => array('./images/c2.jpg', 'CHUTEIRA X GHOSTED + CAMPO', 'R$999,99'),
         2 => array('./images/c3.jpg', 'CHUTEIRA COPA KAPITAN.2 SOCIETY', 'R$699,99'),
         3 => array('./images/c4.jpg', 'CHUTEIRA GAMEMODE KNIT CAMPO', 'R$599,99')
     );
@@ -36,7 +36,7 @@
 
     $produtos1 = array(
         0 => array('./images/c1.jpg', 'CHUTEIRA GAMEMODE KNIT FUTSAL', 'R$599,99'),
-        1 => array('./images/j3.jpg', 'MOLETOM CAPUZ MARIMEKKO', 'R$499,99'),
+        1 => array('./images/j3.jpg', 'MOLETOM MARIMEKKO', 'R$499,99'),
         2 => array('./images/a4.jpg', 'MALA DUFFEL 4ATHLTS PEQUENA', 'R$279,99'),
         3 => array('./images/t3.jpg', 'TÊNIS CHOIGO', 'R$599,99'),
     );
