@@ -21,387 +21,441 @@
         <section class="content">
             <form action="register.php" method="post">
                 <div class="center">
-                    <label>Selecione o produto desejado</label>
+                    <label>Selecione a categoria desejada</label>
                 </div>
                 <div class="center">
                     <select name="optionSelect" id="optionSelect">
                         <option value="0">Selecione</option>
                         <option value="1">Acessórios</option>
-                        <option value="2">Sapatos</option>
+                        <option value="2">Casacos</option>
+                        <option value="3">Tênis</option>
+                        <option value="4">Chuteiras</option>
                     </select>
                     <input type="submit" value="Selecionar">
                 </div>
             </form>
 
             <?php
+            include('array.php');
+
             if (isset($_COOKIE['item'])) {
-                if ($_COOKIE['item'] == 1) {
-                    echo ('
-                            <label>Acessórios</label>
-                            <div class="align">
-                                <div class="card animate_card">
-                                    <img src="./images/a1.jpg" alt="Tênis preto adidas">
-                                    <div class="center font">MOCHILA STAN</div>
-                                    <div class="align font margin">
-                                        <span class="material-icons">
-                                            favorite_border
-                                        </span>
-                                        <p>R$499,99</p>
-                                        <span class="material-icons">
-                                            local_grocery_store
-                                        </span>
-                                    </div>
-                                </div>
-            
-                                <div class="card animate_card">
-                                    <img src="./images/a2.jpg" alt="Tênis preto adidas">
-                                    <div class="center font">Y-3 CH1 REF BP</div>
-                                    <div class="align font margin">
-                                        <span class="material-icons">
-                                            favorite_border
-                                        </span>
-                                        <p>R$2.199,99</p>
-                                        <span class="material-icons">
-                                            local_grocery_store
-                                        </span>
-                                    </div>
-                                </div>
-                
-                                <div class="card animate_card">
-                                    <img src="./images/a3.jpg" alt="Tênis preto adidas">
-                                    <div class="center font">MALA TROLLEY PEQUENA</div>
-                                    <div class="align font margin">
-                                        <span class="material-icons">
-                                            favorite_border
-                                        </span>
-                                        <p>R$999,99</p>
-                                        <span class="material-icons">
-                                            local_grocery_store
-                                        </span>
-                                    </div>
-                                </div>
-            
-                                <div class="card animate_card">
-                                    <img src="./images/a4.jpg" alt="Tênis preto adidas">
-                                    <div class="center font">MALA DUFFEL 4ATHLTS PEQUENA</div>
-                                    <div class="align font margin">
-                                        <span class="material-icons">
-                                            favorite_border
-                                        </span>
-                                        <p>R$279,99</p>
-                                        <span class="material-icons">
-                                            local_grocery_store
-                                        </span>
-                                    </div>
+                switch ($option = $_COOKIE['item']) {
+                    case 1:
+                        //ACESSÓRIOS-------------
+                        echo ('<label>Acessórios</label>');
+                        echo ("<div class=align>");
+                        foreach ($acessorios as $acessorios_indice => $value) {
+                            echo ("   
+                            <div class='card animate_card'>
+                                <img src=" . $value[0] . " alt='Acessórios ADIDAS'>
+                                <div class='center font'>" . $value[1] . "</div>
+                                <div class='align font margin'>
+                                    <span class='material-icons'>
+                                        favorite_border
+                                    </span>
+                                    <p>" . $value[2] . "</p>
+                                    <span class='material-icons'>
+                                        local_grocery_store
+                                    </span>
                                 </div>
                             </div>
-        
-                            <label>Sapatos</label>
-                            <div class="align">
-                                <div class="card animate_card">
-                                    <img src="./images/t1.jpg" alt="Tênis preto adidas">
-                                    <div class="center font">TÊNIS ZX 2K BOOST</div>
-                                    <div class="align font margin">
-                                        <span class="material-icons">
-                                            favorite_border
-                                        </span>
-                                        <p>R$649,99</p>
-                                        <span class="material-icons">
-                                            local_grocery_store
-                                        </span>
-                                    </div>
-                                </div>
-        
-                                <div class="card animate_card">
-                                    <img src="./images/t2.jpg" alt="Tênis preto adidas">
-                                    <div class="center font">TÊNIS D.O.N. ISSUE #3</div>
-                                    <div class="align font margin">
-                                        <span class="material-icons">
-                                            favorite_border
-                                        </span>
-                                        <p>R$799,99</p>
-                                        <span class="material-icons">
-                                            local_grocery_store
-                                        </span>
-                                    </div>
-                                </div>
-        
-                                <div class="card animate_card">
-                                    <img src="./images/t3.jpg" alt="Tênis preto adidas">
-                                    <div class="center font">TÊNIS CHOIGO</div>
-                                    <div class="align font margin">
-                                        <span class="material-icons">
-                                            favorite_border
-                                        </span>
-                                        <p>R$599,99</p>
-                                        <span class="material-icons">
-                                            local_grocery_store
-                                        </span>
-                                    </div>
-                                </div>
-        
-                                <div class="card animate_card">
-                                    <img src="./images/t4.jpg" alt="Tênis preto adidas">
-                                    <div class="center font">Y-3 RUNNER 4D IO</div>
-                                    <div class="align font margin">
-                                        <span class="material-icons">
-                                            favorite_border
-                                        </span>
-                                        <p>R$2.699,99</p>
-                                        <span class="material-icons">
-                                            local_grocery_store
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        ');
-                } else {
-                    echo ('
-                            <label>Sapatos</label>
-                            <div class="align">
-                                <div class="card animate_card">
-                                    <img src="./images/t1.jpg" alt="Tênis preto adidas">
-                                    <div class="center font">TÊNIS ZX 2K BOOST</div>
-                                    <div class="align font margin">
-                                        <span class="material-icons">
-                                            favorite_border
-                                        </span>
-                                        <p>R$649,99</p>
-                                        <span class="material-icons">
-                                            local_grocery_store
-                                        </span>
-                                    </div>
-                                </div>
-            
-                                <div class="card animate_card">
-                                    <img src="./images/t2.jpg" alt="Tênis preto adidas">
-                                    <div class="center font">TÊNIS D.O.N. ISSUE #3</div>
-                                    <div class="align font margin">
-                                        <span class="material-icons">
-                                            favorite_border
-                                        </span>
-                                        <p>R$799,99</p>
-                                        <span class="material-icons">
-                                            local_grocery_store
-                                        </span>
-                                    </div>
-                                </div>
-            
-                                <div class="card animate_card">
-                                    <img src="./images/t3.jpg" alt="Tênis preto adidas">
-                                    <div class="center font">TÊNIS CHOIGO</div>
-                                    <div class="align font margin">
-                                        <span class="material-icons">
-                                            favorite_border
-                                        </span>
-                                        <p>R$599,99</p>
-                                        <span class="material-icons">
-                                            local_grocery_store
-                                        </span>
-                                    </div>
-                                </div>
-            
-                                <div class="card animate_card">
-                                    <img src="./images/t4.jpg" alt="Tênis preto adidas">
-                                    <div class="center font">Y-3 RUNNER 4D IO</div>
-                                    <div class="align font margin">
-                                        <span class="material-icons">
-                                            favorite_border
-                                        </span>
-                                        <p>R$2.699,99</p>
-                                        <span class="material-icons">
-                                            local_grocery_store
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+                            ");
+                        }
+                        echo ("</div>");
 
-                            <label>Acessórios</label>
-                            <div class="align">
-                                <div class="card animate_card">
-                                    <img src="./images/a1.jpg" alt="Tênis preto adidas">
-                                    <div class="center font">MOCHILA STAN</div>
-                                    <div class="align font margin">
-                                        <span class="material-icons">
-                                            favorite_border
-                                        </span>
-                                        <p>R$499,99</p>
-                                        <span class="material-icons">
-                                            local_grocery_store
-                                        </span>
-                                    </div>
+                        //CASACOS-------------
+                        echo ('<label>Casacos</label>');
+                        echo ("<div class=align>");
+                        foreach ($casacos as $casacos_indice => $value) {
+                            echo ("   
+                            <div class='card animate_card'>
+                                <img src=" . $value[0] . " alt='Casacos ADIDAS'>
+                                <div class='center font'>" . $value[1] . "</div>
+                                <div class='align font margin'>
+                                    <span class='material-icons'>
+                                        favorite_border
+                                    </span>
+                                    <p>" . $value[2] . "</p>
+                                    <span class='material-icons'>
+                                        local_grocery_store
+                                    </span>
                                 </div>
-            
-                                <div class="card animate_card">
-                                    <img src="./images/a2.jpg" alt="Tênis preto adidas">
-                                    <div class="center font">Y-3 CH1 REF BP</div>
-                                    <div class="align font margin">
-                                        <span class="material-icons">
-                                            favorite_border
-                                        </span>
-                                        <p>R$2.199,99</p>
-                                        <span class="material-icons">
-                                            local_grocery_store
-                                        </span>
-                                    </div>
+                            </div>
+                            ");
+                        }
+                        echo ("</div>");
+
+                        //CHUTEIRAS-------------
+                        echo ('<label>Chuteiras</label>');
+                        echo ("<div class=align>");
+                        foreach ($chuteiras as $chuteiras_indice => $value) {
+                            echo ("   
+                            <div class='card animate_card'>
+                                <img src=" . $value[0] . " alt='Chuteiras ADIDAS'>
+                                <div class='center font'>" . $value[1] . "</div>
+                                <div class='align font margin'>
+                                    <span class='material-icons'>
+                                        favorite_border
+                                    </span>
+                                    <p>" . $value[2] . "</p>
+                                    <span class='material-icons'>
+                                        local_grocery_store
+                                    </span>
                                 </div>
-            
-                                <div class="card animate_card">
-                                    <img src="./images/a3.jpg" alt="Tênis preto adidas">
-                                    <div class="center font">MALA TROLLEY PEQUENA</div>
-                                    <div class="align font margin">
-                                        <span class="material-icons">
-                                            favorite_border
-                                        </span>
-                                        <p>R$999,99</p>
-                                        <span class="material-icons">
-                                            local_grocery_store
-                                        </span>
-                                    </div>
+                            </div>
+                            ");
+                        }
+                        echo ("</div>");
+
+                        //SAPATOS--------------
+                        echo ('<label>Tênis</label>');
+                        echo ("<div class=align>");
+                        foreach ($tenis as $tenis_indice => $value) {
+                            echo ("   
+                            <div class='card animate_card'>
+                                <img src=" . $value[0] . " alt='Sapatos ADIDAS'>
+                                <div class='center font'>" . $value[1] . "</div>
+                                <div class='align font margin'>
+                                    <span class='material-icons'>
+                                        favorite_border
+                                    </span>
+                                    <p>" . $value[2] . "</p>
+                                    <span class='material-icons'>
+                                        local_grocery_store
+                                    </span>
                                 </div>
-            
-                                <div class="card animate_card">
-                                    <img src="./images/a4.jpg" alt="Tênis preto adidas">
-                                    <div class="center font">MALA DUFFEL 4ATHLTS PEQUENA</div>
-                                    <div class="align font margin">
-                                        <span class="material-icons">
-                                            favorite_border
-                                        </span>
-                                        <p>R$279,99</p>
-                                        <span class="material-icons">
-                                            local_grocery_store
-                                        </span>
-                                    </div>
+                            </div>
+                            ");
+                        }
+                        echo ("</div>");
+                        break;
+
+                    case 2:
+                        //CASACOS-------------
+                        echo ('<label>Casacos</label>');
+                        echo ("<div class=align>");
+                        foreach ($casacos as $casacos_indice => $value) {
+                            echo ("   
+                            <div class='card animate_card'>
+                                <img src=" . $value[0] . " alt='Casacos ADIDAS'>
+                                <div class='center font'>" . $value[1] . "</div>
+                                <div class='align font margin'>
+                                    <span class='material-icons'>
+                                        favorite_border
+                                    </span>
+                                    <p>" . $value[2] . "</p>
+                                    <span class='material-icons'>
+                                        local_grocery_store
+                                    </span>
                                 </div>
-                            </div>    
-                        ');
+                            </div>
+                            ");
+                        }
+                        echo ("</div>");
+
+                        //CHUTEIRAS-------------
+                        echo ('<label>Chuteiras</label>');
+                        echo ("<div class=align>");
+                        foreach ($chuteiras as $chuteiras_indice => $value) {
+                            echo ("   
+                            <div class='card animate_card'>
+                                <img src=" . $value[0] . " alt='Chuteiras ADIDAS'>
+                                <div class='center font'>" . $value[1] . "</div>
+                                <div class='align font margin'>
+                                    <span class='material-icons'>
+                                        favorite_border
+                                    </span>
+                                    <p>" . $value[2] . "</p>
+                                    <span class='material-icons'>
+                                        local_grocery_store
+                                    </span>
+                                </div>
+                            </div>
+                            ");
+                        }
+                        echo ("</div>");
+
+                        //SAPATOS--------------
+                        echo ('<label>Tênis</label>');
+                        echo ("<div class=align>");
+                        foreach ($tenis as $tenis_indice => $value) {
+                            echo ("   
+                            <div class='card animate_card'>
+                                <img src=" . $value[0] . " alt='Sapatos ADIDAS'>
+                                <div class='center font'>" . $value[1] . "</div>
+                                <div class='align font margin'>
+                                <span class='material-icons'>
+                                    favorite_border
+                                </span>
+                                <p>" . $value[2] . "</p>
+                                <span class='material-icons'>
+                                    local_grocery_store
+                                </span>
+                                </div>
+                            </div>
+                            ");
+                        }
+                        echo ("</div>");
+
+                        //ACESSÓRIOS-------------
+                        echo ('<label>Acessórios</label>');
+                        echo ("<div class=align>");
+                        foreach ($acessorios as $acessorios_indice => $value) {
+                            echo ("   
+                            <div class='card animate_card'>
+                                <img src=" . $value[0] . " alt='Acessórios ADIDAS'>
+                                <div class='center font'>" . $value[1] . "</div>
+                                <div class='align font margin'>
+                                <span class='material-icons'>
+                                    favorite_border
+                                </span>
+                                <p>" . $value[2] . "</p>
+                                <span class='material-icons'>
+                                    local_grocery_store
+                                </span>
+                                </div>
+                            </div>
+                            ");
+                        }
+                        echo ("</div>");
+                        break;
+
+                    case 3:
+                        //SAPATOS--------------
+                        echo ('<label>Tênis</label>');
+                        echo ("<div class=align>");
+                        foreach ($tenis as $tenis_indice => $value) {
+                            echo ("   
+                            <div class='card animate_card'>
+                                <img src=" . $value[0] . " alt='Sapatos ADIDAS'>
+                                <div class='center font'>" . $value[1] . "</div>
+                                <div class='align font margin'>
+                                    <span class='material-icons'>
+                                        favorite_border
+                                    </span>
+                                    <p>" . $value[2] . "</p>
+                                    <span class='material-icons'>
+                                        local_grocery_store
+                                    </span>
+                                </div>
+                            </div>
+                            ");
+                        }
+                        echo ("</div>");
+
+                        //ACESSÓRIOS-------------
+                        echo ('<label>Acessórios</label>');
+                        echo ("<div class=align>");
+                        foreach ($acessorios as $acessorios_indice => $value) {
+                            echo ("   
+                            <div class='card animate_card'>
+                                <img src=" . $value[0] . " alt='Acessórios ADIDAS'>
+                                <div class='center font'>" . $value[1] . "</div>
+                                <div class='align font margin'>
+                                    <span class='material-icons'>
+                                        favorite_border
+                                    </span>
+                                    <p>" . $value[2] . "</p>
+                                    <span class='material-icons'>
+                                        local_grocery_store
+                                    </span>
+                                </div>
+                            </div>
+                            ");
+                        }
+                        echo ("</div>");
+
+                        //CASACOS-------------
+                        echo ('<label>Casacos</label>');
+                        echo ("<div class=align>");
+                        foreach ($casacos as $casacos_indice => $value) {
+                            echo ("   
+                            <div class='card animate_card'>
+                                <img src=" . $value[0] . " alt='Casacos ADIDAS'>
+                                <div class='center font'>" . $value[1] . "</div>
+                                <div class='align font margin'>
+                                    <span class='material-icons'>
+                                        favorite_border
+                                    </span>
+                                    <p>" . $value[2] . "</p>
+                                    <span class='material-icons'>
+                                        local_grocery_store
+                                    </span>
+                                </div>
+                            </div>
+                            ");
+                        }
+                        echo ("</div>");
+
+                        //CHUTEIRAS-------------
+                        echo ('<label>Chuteiras</label>');
+                        echo ("<div class=align>");
+                        foreach ($chuteiras as $chuteiras_indice => $value) {
+                            echo ("   
+                            <div class='card animate_card'>
+                                <img src=" . $value[0] . " alt='Chuteiras ADIDAS'>
+                                <div class='center font'>" . $value[1] . "</div>
+                                <div class='align font margin'>
+                                    <span class='material-icons'>
+                                        favorite_border
+                                    </span>
+                                    <p>" . $value[2] . "</p>
+                                    <span class='material-icons'>
+                                        local_grocery_store
+                                    </span>
+                                </div>
+                            </div>
+                            ");
+                        }
+                        echo ("</div>");
+                        break;
+
+                    case 4:
+                        //CHUTEIRAS-------------
+                        echo ('<label>Chuteiras</label>');
+                        echo ("<div class=align>");
+                        foreach ($chuteiras as $chuteiras_indice => $value) {
+                            echo ("   
+                            <div class='card animate_card'>
+                                <img src=" . $value[0] . " alt='Chuteiras ADIDAS'>
+                                <div class='center font'>" . $value[1] . "</div>
+                                <div class='align font margin'>
+                                    <span class='material-icons'>
+                                        favorite_border
+                                    </span>
+                                    <p>" . $value[2] . "</p>
+                                    <span class='material-icons'>
+                                        local_grocery_store
+                                    </span>
+                                </div>
+                            </div>
+                            ");
+                        }
+                        echo ("</div>");
+
+                        //SAPATOS--------------
+                        echo ('<label>Tênis</label>');
+                        echo ("<div class=align>");
+                        foreach ($tenis as $tenis_indice => $value) {
+                            echo ("   
+                            <div class='card animate_card'>
+                                <img src=" . $value[0] . " alt='Sapatos ADIDAS'>
+                                <div class='center font'>" . $value[1] . "</div>
+                                <div class='align font margin'>
+                                    <span class='material-icons'>
+                                        favorite_border
+                                    </span>
+                                    <p>" . $value[2] . "</p>
+                                    <span class='material-icons'>
+                                        local_grocery_store
+                                    </span>
+                                </div>
+                            </div>
+                            ");
+                        }
+                        echo ("</div>");
+
+                        //ACESSÓRIOS-------------
+                        echo ('<label>Acessórios</label>');
+                        echo ("<div class=align>");
+                        foreach ($acessorios as $acessorios_indice => $value) {
+                            echo ("   
+                            <div class='card animate_card'>
+                                <img src=" . $value[0] . " alt='Acessórios ADIDAS'>
+                                <div class='center font'>" . $value[1] . "</div>
+                                <div class='align font margin'>
+                                    <span class='material-icons'>
+                                        favorite_border
+                                    </span>
+                                    <p>" . $value[2] . "</p>
+                                    <span class='material-icons'>
+                                        local_grocery_store
+                                    </span>
+                                </div>
+                            </div>
+                            ");
+                        }
+                        echo ("</div>");
+
+                        //CASACOS-------------
+                        echo ('<label>Casacos</label>');
+                        echo ("<div class=align>");
+                        foreach ($casacos as $casacos_indice => $value) {
+                            echo ("   
+                            <div class='card animate_card'>
+                                <img src=" . $value[0] . " alt='Casacos ADIDAS'>
+                                <div class='center font'>" . $value[1] . "</div>
+                                <div class='align font margin'>
+                                    <span class='material-icons'>
+                                        favorite_border
+                                    </span>
+                                    <p>" . $value[2] . "</p>
+                                    <span class='material-icons'>
+                                        local_grocery_store
+                                    </span>
+                                </div>
+                            </div>
+                            ");
+                        }
+                        echo ("</div>");
+                        break;
+
+                    default:
+                    echo('
+                        <label class="center">Ops... você não selecionou nenhuma categoria. Selecione para continuar.</label>
+                        <div class="center">
+                            <img src="./images/default.svg">
+                        </div>
+                    ');    
                 }
-            } else{
-                echo ('
-                <label>Sapatos</label>
-                <div class="align">
-                    <div class="card animate_card">
-                        <img src="./images/t1.jpg" alt="Tênis preto adidas">
-                        <div class="center font">TÊNIS ZX 2K BOOST</div>
-                        <div class="align font margin">
-                            <span class="material-icons">
+            } else {
+                echo ('<label>Produtos</label>');
+                echo ("<div class=align>");
+                foreach ($produtos as $produtos_indice => $value) {
+                    echo ("   
+                    <div class='card animate_card'>
+                        <img src=" . $value[0] . " alt='Casacos ADIDAS'>
+                        <div class='center font'>" . $value[1] . "</div>
+                        <div class='align font margin'>
+                            <span class='material-icons'>
                                 favorite_border
                             </span>
-                            <p>R$649,99</p>
-                            <span class="material-icons">
+                            <p>" . $value[2] . "</p>
+                            <span class='material-icons'>
                                 local_grocery_store
                             </span>
                         </div>
                     </div>
+                    ");
+                }
+                echo ("</div>"); 
 
-                    <div class="card animate_card">
-                        <img src="./images/t2.jpg" alt="Tênis preto adidas">
-                        <div class="center font">TÊNIS D.O.N. ISSUE #3</div>
-                        <div class="align font margin">
-                            <span class="material-icons">
+                echo ("<div class=align>");
+                foreach ($produtos1 as $produtos_indice => $value) {
+                    echo ("   
+                    <div class='card animate_card'>
+                        <img src=" . $value[0] . " alt='Casacos ADIDAS'>
+                        <div class='center font'>" . $value[1] . "</div>
+                        <div class='align font margin'>
+                            <span class='material-icons'>
                                 favorite_border
                             </span>
-                            <p>R$799,99</p>
-                            <span class="material-icons">
+                            <p>" . $value[2] . "</p>
+                            <span class='material-icons'>
                                 local_grocery_store
                             </span>
                         </div>
                     </div>
-
-                    <div class="card animate_card">
-                        <img src="./images/t3.jpg" alt="Tênis preto adidas">
-                        <div class="center font">TÊNIS CHOIGO</div>
-                        <div class="align font margin">
-                            <span class="material-icons">
-                                favorite_border
-                            </span>
-                            <p>R$599,99</p>
-                            <span class="material-icons">
-                                local_grocery_store
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="card animate_card">
-                        <img src="./images/t4.jpg" alt="Tênis preto adidas">
-                        <div class="center font">Y-3 RUNNER 4D IO</div>
-                        <div class="align font margin">
-                            <span class="material-icons">
-                                favorite_border
-                            </span>
-                            <p>R$2.699,99</p>
-                            <span class="material-icons">
-                                local_grocery_store
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <label>Acessórios</label>
-                <div class="align">
-                    <div class="card animate_card">
-                        <img src="./images/a1.jpg" alt="Tênis preto adidas">
-                        <div class="center font">MOCHILA STAN</div>
-                        <div class="align font margin">
-                            <span class="material-icons">
-                                favorite_border
-                            </span>
-                            <p>R$499,99</p>
-                            <span class="material-icons">
-                                local_grocery_store
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="card animate_card">
-                        <img src="./images/a2.jpg" alt="Tênis preto adidas">
-                        <div class="center font">Y-3 CH1 REF BP</div>
-                        <div class="align font margin">
-                            <span class="material-icons">
-                                favorite_border
-                            </span>
-                            <p>R$2.199,99</p>
-                            <span class="material-icons">
-                                local_grocery_store
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="card animate_card">
-                        <img src="./images/a3.jpg" alt="Tênis preto adidas">
-                        <div class="center font">MALA TROLLEY PEQUENA</div>
-                        <div class="align font margin">
-                            <span class="material-icons">
-                                favorite_border
-                            </span>
-                            <p>R$999,99</p>
-                            <span class="material-icons">
-                                local_grocery_store
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="card animate_card">
-                        <img src="./images/a4.jpg" alt="Tênis preto adidas">
-                        <div class="center font">MALA DUFFEL 4ATHLTS PEQUENA</div>
-                        <div class="align font margin">
-                            <span class="material-icons">
-                                favorite_border
-                            </span>
-                            <p>R$279,99</p>
-                            <span class="material-icons">
-                                local_grocery_store
-                            </span>
-                        </div>
-                    </div>
-                </div>    
-            ');
+                    ");
+                }
+                echo ("</div>");
             }
             ?>
         </section>
         <div class="logo center">
             <div class="rool rool_animate">
                 <div>
+                    &copy Helena Miranda da Silva | 2021 &copy Helena Miranda da Silva | 2021
                     &copy Helena Miranda da Silva | 2021 &copy Helena Miranda da Silva | 2021
                     &copy Helena Miranda da Silva | 2021 &copy Helena Miranda da Silva | 2021
                     &copy Helena Miranda da Silva | 2021 &copy Helena Miranda da Silva | 2021
@@ -414,9 +468,11 @@
                     &copy Helena Miranda da Silva | 2021 &copy Helena Miranda da Silva | 2021
                     &copy Helena Miranda da Silva | 2021 &copy Helena Miranda da Silva | 2021
                     &copy Helena Miranda da Silva | 2021 &copy Helena Miranda da Silva | 2021
+                    &copy Helena Miranda da Silva | 2021 &copy Helena Miranda da Silva | 2021
                 </div>
             </div>
         </div>
     </main>
 </body>
+
 </html>
